@@ -1,10 +1,5 @@
 sap.ui.define(
-  [
-    'sap/ui/core/UIComponent',
-    'sap/ui/model/json/JSONModel',
-    'sap/ui/model/resource/ResourceModel',
-    'sap/ui/Device',
-  ],
+  ['sap/ui/core/UIComponent', 'sap/ui/model/json/JSONModel', 'sap/ui/Device'],
   (UIComponent, JSONModel, Device) => {
     'use strict';
 
@@ -32,6 +27,10 @@ sap.ui.define(
         this.setModel(oDeviceModel, 'device');
 
         this.getRouter().initialize();
+      },
+
+      getContentDensityClass() {
+        return Device.support.touch ? 'sapUiSizeCozy' : 'sapUiSizeCompact';
       },
     });
   }
