@@ -11,6 +11,18 @@
 				<SearchField
 					width="50%"
 					search=".onFilterInvoices"/>
+				<ComboBox
+					id="statusFilter"
+					selectedKey="All"
+					selectionChange=".onStatusFilterChange"
+					width="16%">
+					<items>
+						<core:Item key="All" text="{i18n>invoiceStatusAll}" />
+						<core:Item key="A" text="{i18n>invoiceStatusA}" />
+						<core:Item key="B" text="{i18n>invoiceStatusB}" />
+						<core:Item key="C" text="{i18n>invoiceStatusC}" />
+					</items>
+				</ComboBox>
 			</Toolbar>
 		</headerToolbar>
 		<Table

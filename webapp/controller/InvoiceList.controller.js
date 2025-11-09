@@ -30,6 +30,18 @@ sap.ui.define(
         oBinding.filter(aFilter);
       },
 
+      onStatusFilterChange(oEvent) {
+        const aFilter = [];
+        const sSelectedKey = oEvent.getParameter('selectedItem').getKey();
+        if (sSelectedKey !== 'All') {
+          aFilter.push(new Filter('Status', FilterOperator.EQ, sSelectedKey));
+        }
+
+        const oList = this.byId('invoiceList');
+        const oBinding = oList.getBinding('items');
+        oBinding.filter(aFilter);
+      },
+
       onPress(oEvent) {
         const oItem = oEvent.getSource();
         const oRouter = this.getOwnerComponent().getRouter();
